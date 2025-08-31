@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HospitalApp": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
