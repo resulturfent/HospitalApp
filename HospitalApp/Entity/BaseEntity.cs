@@ -7,4 +7,5 @@ internal class BaseEntity
     public int CreatorId { get; set; }
     public DateTime UpdateDate { get; set; }
     public int UpdaterId { get; set; }
+   
 }

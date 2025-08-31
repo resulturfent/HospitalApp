@@ -1,7 +1,8 @@
 ﻿namespace HospitalApp.Entity;
 
 //internal class Appointment
-internal class Appointment: BaseEntity//inheritance
+//internal class Appointment: BaseEntity//inheritance
+internal class Appointment: DeleteBaseEntity//inheritance
 {
     public int Id { get; set; }
     public int PatientId { get; set; }
