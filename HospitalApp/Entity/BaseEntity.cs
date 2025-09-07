@@ -1,7 +1,9 @@
 ﻿namespace HospitalApp.Entity;
 
-internal class BaseEntity
+internal abstract  class BaseEntity
 {
+
+ 
     public bool IsActive { get; set; }
     public DateTime CreateDate { get; set; }
     public int CreatorId { get; set; }
@@ -23,4 +25,5 @@ internal class BaseEntity
         UpdaterId = updaterId;
     }
 
+    public abstract void DeleteInfo(int deleterId);
 }

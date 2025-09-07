@@ -57,7 +57,7 @@ namespace HospitalApp
                 Console.Write(item.Name + "-");
                 //Console.Write(item.CreatorId + "-");
                // Console.Write(item.CreateDate );
-                Console.Write(item.CreaterInfo(10) );
+                Console.Write(item.CreaterInfo("10") );
                 Console.WriteLine();
             }
 

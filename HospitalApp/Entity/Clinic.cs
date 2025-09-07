@@ -12,6 +12,11 @@ internal class Clinic:BaseEntity
         return param[0];
     }
 
+    public override void DeleteInfo(int deleterId)
+    {
+        throw new NotImplementedException();
+    }
+
     public List<Clinic> List()
     {
         var clinics = new List<Clinic>
