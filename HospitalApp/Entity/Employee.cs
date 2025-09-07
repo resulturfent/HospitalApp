@@ -34,4 +34,6 @@ internal class Employee:BaseEntity
         }//değer atarken çalışacak
     }
 
+
+
 }

@@ -14,6 +14,14 @@ internal class Doctor:BaseEntity
     public long TC { get; set; }
 
 
+    public override string CreateInfo()
+    {
+        Id = 25090701;
+        CreateDate = Convert.ToDateTime("09-05-2025");// kayıt tarihi=> 2 +- gün değişebilir
+        CreatorId = 10;
+        return "Doktor ID:" + Id + " Kayıt Tarihi:" + CreateDate + " Kayıt Eden Kullanıcı ID:" + CreatorId;
+    }
+
 
     private string  _email { get; set; }
 

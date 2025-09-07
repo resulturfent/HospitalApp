@@ -46,6 +46,29 @@ namespace HospitalApp
             Console.WriteLine(  doctor.Email);
             //Console.WriteLine(doctor._email);
             //bir Role adında bir class oluşturun ve BaseEntity den inherit edin ve Id,Name,Description alanlarını ekleyin
+            Console.Clear();
+
+            Clinic clinic = new Clinic();
+
+            var clinics = clinic.List();
+
+            foreach (var item in clinics)
+            {
+                if (item.IsActive)//sadece aktif olanları listele
+                {
+                    Console.WriteLine(item.Id + " " + item.Name + " " + item.IsActive + " " + item.CreateDate);
+                }
+            }
+
+            //**************************************
+            //interface, abstract
+            //virtual=> Sanal, override=> ezmek
+            Console.WriteLine("Doktor Create Info");
+            Console.WriteLine(doctor.CreateInfo());
+
+            Console.WriteLine("Clinic Create Info");
+            Console.WriteLine( clinic.CreateInfo());
+
 
             Console.Read();
 

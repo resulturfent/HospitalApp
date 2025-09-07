@@ -20,4 +20,7 @@ internal class Clinic:BaseEntity
         return clinics;
 
     }
+
+
+
 }
