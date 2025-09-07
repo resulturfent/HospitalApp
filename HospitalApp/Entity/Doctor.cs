@@ -22,6 +22,10 @@ internal class Doctor:BaseEntity
         return "Doktor ID:" + Id + " Kayıt Tarihi:" + CreateDate + " Kayıt Eden Kullanıcı ID:" + CreatorId;
     }
 
+    public override string GetInfo()
+    {
+        return "Doktor Adı:" + Name + " Doktor Soyadı:" + Lastname + " Ünvanı:" + Title + " Klinik ID:" + ClinicId;
+    }
 
     private string  _email { get; set; }
 

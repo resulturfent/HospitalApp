@@ -1,5 +1,6 @@
 ﻿
 using HospitalApp.Entity;
+using HospitalApp.Service;
 
 namespace HospitalApp
 {
@@ -68,7 +69,17 @@ namespace HospitalApp
 
             Console.WriteLine("Clinic Create Info");
             Console.WriteLine( clinic.CreateInfo());
+            //---------------------------------------------------
+            //interface, abstract 
+            Employee employee1 = new Employee();
+            Clinic clinic1 = new Clinic();
+            // BaseEntity baseEntity = new BaseEntity();//instance alınabiliyor??
 
+            //IDoctor doctor1 = new IDoctor();
+            //Interface class türü new lwnip örnek alınamaz(instance alınamaz). Tek bir amacı var o da Implemet etmek 
+
+            doctor.GetInfo();//
+            clinic.GetInfo();
 
             Console.Read();
 

@@ -1,6 +1,6 @@
 ﻿namespace HospitalApp.Entity;
 
-internal class Employee:BaseEntity
+public class Employee:BaseEntity
 {
     public int Id;//Field
     public long TC;//Field
@@ -34,6 +34,8 @@ internal class Employee:BaseEntity
         }//değer atarken çalışacak
     }
 
-
-
+    public override string GetInfo()
+    {
+        throw new NotImplementedException();
+    }
 }

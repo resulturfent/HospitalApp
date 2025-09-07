@@ -10,4 +10,8 @@ internal class Appointment: DeleteBaseEntity//inheritance
     public DateTime AppointmentDate { get; set; }
     public string Hour { get; set; }
 
+    //public override string GetInfo()
+    //{
+    //    return $"Id: {Id}, PatientId: {PatientId}, DoctorId: {DoctorId}, AppointmentDate: {AppointmentDate}, Hour: {Hour}";
+    //}
 }

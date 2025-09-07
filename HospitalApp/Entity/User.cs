@@ -7,4 +7,8 @@ internal class User:BaseEntity
     public string  Password { get; set; }
     public int  EmployeeId { get; set; }
 
+    public override string GetInfo()
+    {
+        throw new NotImplementedException();
+    }
 }

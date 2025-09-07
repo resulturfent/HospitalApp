@@ -1,12 +1,13 @@
 ﻿namespace HospitalApp.Entity;
 
-internal class BaseEntity
+public abstract class BaseEntity
 {
     public bool IsActive { get; set; }
     public DateTime CreateDate { get; set; }
     public int CreatorId { get; set; }
     public DateTime UpdateDate { get; set; }
     public int UpdaterId { get; set; }
+
 
 
     public virtual string  CreateInfo()
@@ -16,5 +17,12 @@ internal class BaseEntity
         
         return "Kayıt Tarihi:" + CreateDate + " Kayıt Eden Kullanıcı ID:" + CreatorId;
     }
-   
+    //abstract class içinde method tanımlama yapılabilir
+    public string Bul()
+    {
+        return "BaseEntity Sınıfından Bul Metodu Çalıştı";
+    }
+
+    public abstract string GetInfo();//sözleşme++
+
 }

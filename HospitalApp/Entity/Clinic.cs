@@ -5,6 +5,11 @@ internal class Clinic:BaseEntity
     public int Id { get; set; }
     public string Name { get; set; }
 
+    public override string GetInfo()
+    {
+        string clinicName = "Klinik Adı: " + Name;
+        throw new NotImplementedException();
+    }
 
     public List<Clinic> List()
     {
