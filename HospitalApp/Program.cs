@@ -1,6 +1,7 @@
 ﻿
 using HospitalApp.Entity;
 using HospitalApp.Service;
+using System.Linq;
 
 namespace HospitalApp
 {
@@ -80,6 +81,64 @@ namespace HospitalApp
 
             doctor.GetInfo();//
             clinic.GetInfo();
+            Console.Clear();
+
+            Appointment appointment = new Appointment();
+
+            Console.WriteLine("Randevu için tarih yazınız");
+            DateTime appointmentDate = Convert.ToDateTime(Console.ReadLine());
+            appointment.CreateDate = DateTime.Now;
+            appointment.CreatorId = 1;
+
+            Console.WriteLine("Randevu için saat giriniz");
+            string appointmentHour = Console.ReadLine();
+
+            Console.WriteLine("{0} tarihinda {1} saatinde yapacağınız randevu için klinik seçiniz?", appointmentDate.ToShortDateString(), appointmentHour);
+
+
+            while (true)
+            {
+                var listClinics = clinic.List();
+
+                foreach (var item in listClinics)
+                {
+                    Console.WriteLine("Id:{0} Adı:{1}", item.Id, item.Name);
+                }
+                int secilenKlinikId = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("Seçilen Klinik için doktor seçimini yapınız!");
+
+                var doctors = doctor.List();
+                int countAppointment = 0;
+
+                foreach (var item in doctors)
+                {
+                    if (secilenKlinikId == item.ClinicId)
+                    {
+                        countAppointment++;
+                        Console.WriteLine("Id:{0} Adı-Soyadı:{1}-{2} ", item.Id, item.Name, item.Lastname);
+                    }
+                }
+
+                if (countAppointment == 0)
+                {
+                    Console.WriteLine("Seçilen Klinik için uygun doktor bulunamadı");
+                    Console.WriteLine("-----------------------------------------------");
+
+                    Console.WriteLine("Lütfen uygun bir klinik seçiniz");
+                    continue;
+                }
+
+                int secileDoktorId = Convert.ToInt32(Console.ReadLine());
+
+                var selectClinic = clinic.List().Where(c => c.Id == secilenKlinikId).FirstOrDefault();
+                var selectDoctor = doctor.List().Where(d => d.Id == secileDoktorId).FirstOrDefault();
+
+                Console.WriteLine("{0} tarihinda {1} saatinde yapacağınız randevu için klinik {2} için {3} doktorona randevunuz başarılı bir şekilde oluşturuldu", appointmentDate.ToShortDateString(), appointmentHour,selectClinic.Name,selectDoctor.Name);
+                break;
+            }
+
 
             Console.Read();
 

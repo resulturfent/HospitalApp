@@ -8,7 +8,7 @@ internal class Clinic:BaseEntity
     public override string GetInfo()
     {
         string clinicName = "Klinik Adı: " + Name;
-        throw new NotImplementedException();
+        return clinicName;
     }
 
     public List<Clinic> List()
@@ -21,6 +21,7 @@ internal class Clinic:BaseEntity
             new Clinic { Id = 4, Name = "Embriyoloji" , IsActive = false},
             new Clinic { Id = 5, Name = "Dahiliye" , IsActive = true}
         };
+
 
         return clinics;
 

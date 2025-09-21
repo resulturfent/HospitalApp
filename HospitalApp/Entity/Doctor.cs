@@ -46,7 +46,7 @@ internal class Doctor:BaseEntity
     //kullanıcı adı ve soyadı girildiğinde ad ve soyadı büyük harf ile başlatan ve ad soyadı Name altında veren kapsülleme yapısı ekleyiniz
 
 
-    public List<Doctor> Lİst()
+    public List<Doctor> List()
     {
 
         var doctors = new List<Doctor>
