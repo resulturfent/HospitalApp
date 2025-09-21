@@ -22,10 +22,7 @@ internal class Doctor:BaseEntity
         return "Doktor ID:" + Id + " Kayıt Tarihi:" + CreateDate + " Kayıt Eden Kullanıcı ID:" + CreatorId;
     }
 
-    public override string GetInfo()
-    {
-        return "Doktor Adı:" + Name + " Doktor Soyadı:" + Lastname + " Ünvanı:" + Title + " Klinik ID:" + ClinicId;
-    }
+ 
 
     private string  _email { get; set; }
 
@@ -49,7 +46,22 @@ internal class Doctor:BaseEntity
     //kullanıcı adı ve soyadı girildiğinde ad ve soyadı büyük harf ile başlatan ve ad soyadı Name altında veren kapsülleme yapısı ekleyiniz
 
 
+    public List<Doctor> Lİst()
+    {
 
+        var doctors = new List<Doctor>
+            {
+                new Doctor { Id = 1, Name = "Ahmet", Lastname = "Yılmaz", Title = "Prof. Dr.", ClinicId = 1, TC = 12345678901 },
+                new Doctor { Id = 2, Name = "Ayşe", Lastname = "Demir", Title = "Uzm. Dr.", ClinicId = 2, TC = 23456789012 },
+                new Doctor { Id = 3, Name = "Mehmet", Lastname = "Kara", Title = "Op. Dr.", ClinicId = 1, TC = 34567890123 },
+                new Doctor { Id = 4, Name = "Elif", Lastname = "Çelik", Title = "Doç. Dr.", ClinicId = 3, TC = 45678901234 },
+                new Doctor { Id = 5, Name = "Burak", Lastname = "Şahin", Title = "Dr.", ClinicId = 2, TC = 56789012345 }
+            };
+        return doctors;
+    }
 
-
+    public override string GetInfo()
+    {
+        return "Doktor Adı:" + Name + " Doktor Soyadı:" + Lastname + " Ünvanı:" + Title + " Klinik ID:" + ClinicId;
+    }
 }
