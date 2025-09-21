@@ -30,11 +30,11 @@ namespace HospitalApp
             employee.Lastname = "Türfent";
             employee.Email = "resul.turfent@gmail.com";
 
-            Console.WriteLine("ID:"+employee.Id);
-            Console.WriteLine("TC:"+employee.TC);
-            Console.WriteLine("Adı:"+employee.Name);
-            Console.WriteLine("Soyadı:"+employee.Lastname);
-            Console.WriteLine("E-mail:"+employee.Email);//kapsülleme içinde get kısmını kullanır
+            Console.WriteLine("ID:" + employee.Id);
+            Console.WriteLine("TC:" + employee.TC);
+            Console.WriteLine("Adı:" + employee.Name);
+            Console.WriteLine("Soyadı:" + employee.Lastname);
+            Console.WriteLine("E-mail:" + employee.Email);//kapsülleme içinde get kısmını kullanır
             //***************************************
 
             Doctor doctor = new Doctor();//instance=> örnekleme
@@ -42,10 +42,10 @@ namespace HospitalApp
             doctor.TC = 12345678901;
             doctor.Name = "resül";
             doctor.Email = "resul.turfent";
-           //// create => resul.turfent@communitydeveloper.com
-           doctor.IsActive = true;//inherit edilen class üzerinde property çağrıldı
+            //// create => resul.turfent@communitydeveloper.com
+            doctor.IsActive = true;//inherit edilen class üzerinde property çağrıldı
 
-            Console.WriteLine(  doctor.Email);
+            Console.WriteLine(doctor.Email);
             //Console.WriteLine(doctor._email);
             //bir Role adında bir class oluşturun ve BaseEntity den inherit edin ve Id,Name,Description alanlarını ekleyin
             Console.Clear();
@@ -69,7 +69,7 @@ namespace HospitalApp
             Console.WriteLine(doctor.CreateInfo());
 
             Console.WriteLine("Clinic Create Info");
-            Console.WriteLine( clinic.CreateInfo());
+            Console.WriteLine(clinic.CreateInfo());
             //---------------------------------------------------
             //interface, abstract 
             Employee employee1 = new Employee();
@@ -79,8 +79,8 @@ namespace HospitalApp
             //IDoctor doctor1 = new IDoctor();
             //Interface class türü new lwnip örnek alınamaz(instance alınamaz). Tek bir amacı var o da Implemet etmek 
 
-            doctor.GetInfo();//
-            clinic.GetInfo();
+            doctor.GetInfo(1);//
+            clinic.GetInfo(1);
             Console.Clear();
 
             Appointment appointment = new Appointment();
@@ -111,6 +111,7 @@ namespace HospitalApp
 
                 var doctors = doctor.List();
                 int countAppointment = 0;
+                int appointmentId = 0;
 
                 foreach (var item in doctors)
                 {
@@ -135,10 +136,19 @@ namespace HospitalApp
                 var selectClinic = clinic.List().Where(c => c.Id == secilenKlinikId).FirstOrDefault();
                 var selectDoctor = doctor.List().Where(d => d.Id == secileDoktorId).FirstOrDefault();
 
-                Console.WriteLine("{0} tarihinda {1} saatinde yapacağınız randevu için klinik {2} için {3} doktorona randevunuz başarılı bir şekilde oluşturuldu", appointmentDate.ToShortDateString(), appointmentHour,selectClinic.Name,selectDoctor.Name);
+                Console.WriteLine("{0} tarihinda {1} saatinde yapacağınız randevu için klinik {2} için {3} doktorona randevunuz başarılı bir şekilde oluşturuldu", appointmentDate.ToShortDateString(), appointmentHour, selectClinic.Name, selectDoctor.Name);
+                appointmentId++;
+                appointment.Id = appointmentId;
+                appointment.PatientId = 1;
+                appointment.DoctorId = secileDoktorId;
+                appointment.ClinicId = secilenKlinikId;
+                appointment.AppointmentDate = appointmentDate;
+                appointment.Hour = appointmentHour;
+                appointment.CreateDate = DateTime.Now;
+                appointment.CreatorId = 1;
+                Console.WriteLine(appointment.GetInfo(appointmentId));//abstract method kullanıldı
                 break;
             }
-
 
             Console.Read();
 

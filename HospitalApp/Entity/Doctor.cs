@@ -60,7 +60,7 @@ internal class Doctor:BaseEntity
         return doctors;
     }
 
-    public override string GetInfo()
+    public override string GetInfo(int Id)
     {
         return "Doktor Adı:" + Name + " Doktor Soyadı:" + Lastname + " Ünvanı:" + Title + " Klinik ID:" + ClinicId;
     }

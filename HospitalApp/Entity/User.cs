@@ -77,7 +77,7 @@ internal class User:BaseEntity
 
     }
 
-    public override string GetInfo()
+    public override string GetInfo(int Id)
     {
         throw new NotImplementedException();
     }

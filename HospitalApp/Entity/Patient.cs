@@ -17,7 +17,7 @@ internal class Patient : BaseEntity
     public string City { get; set; }
     public string District { get; set; }
 
-    public override string GetInfo()
+    public override string GetInfo(int Id)
     {
         throw new NotImplementedException();
     }

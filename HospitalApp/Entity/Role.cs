@@ -7,7 +7,7 @@ internal class Role:BaseEntity
     public string Name { get; set; }
     public string Description { get; set; }
 
-    public override string GetInfo()
+    public override string GetInfo(int Id)
     {
         throw new NotImplementedException();
     }

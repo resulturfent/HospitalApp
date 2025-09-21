@@ -5,7 +5,7 @@ internal class Clinic:BaseEntity
     public int Id { get; set; }
     public string Name { get; set; }
 
-    public override string GetInfo()
+    public override string GetInfo(int Id)
     {
         string clinicName = "Klinik Adı: " + Name;
         return clinicName;

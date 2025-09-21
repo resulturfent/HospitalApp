@@ -9,8 +9,9 @@ internal class Appointment: DeleteBaseEntity//inheritance
     public int DoctorId { get; set; }
     public DateTime AppointmentDate { get; set; }
     public string Hour { get; set; }
+    public int ClinicId { get; set; }
 
-    public override string GetInfo()
+    public override string GetInfo(int Id)
     {
         return $"Id: {Id}, PatientId: {PatientId}, DoctorId: {DoctorId}, AppointmentDate: {AppointmentDate}, Hour: {Hour}"; 
     }

@@ -23,6 +23,6 @@ public abstract class BaseEntity
         return "BaseEntity Sınıfından Bul Metodu Çalıştı";
     }
 
-    public abstract string GetInfo();//sözleşme++
+    public abstract string GetInfo(int Id);//sözleşme++
 
 }

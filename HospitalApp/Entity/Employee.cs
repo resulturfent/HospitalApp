@@ -34,7 +34,7 @@ public class Employee:BaseEntity
         }//değer atarken çalışacak
     }
 
-    public override string GetInfo()
+    public override string GetInfo(int Id)
     {
         throw new NotImplementedException();
     }
